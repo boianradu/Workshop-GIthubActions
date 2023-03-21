@@ -36,7 +36,5 @@ jobs:
       - name: Get the date
         id: date
         run: |
-          echo "TMPDIR=${{ github.WORKSPACE }}/tmp" >> $GITHUB_ENV
-          echo "date=$(date)" >> $GITHUB_OUTPUTS
           echo $GIT_PR_SHA
   
