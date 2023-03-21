@@ -29,9 +29,14 @@ jobs:
   share-output:
     runs-on: ubuntu-latest
     steps:
-      name: Get the date
-      id: date
-      run: |
-        echo "TMPDIR=${{ github.WORKSPACE }}/tmp" >> $GITHUB_ENV
-        echo "date=$(date)" >> $GITHUB_OUTPUTS
+      - name: Set the date
+        id: setdate
+        run: |
+          export GIT_PR_SHA="${{ github.sha }}"
+      - name: Get the date
+        id: date
+        run: |
+          echo "TMPDIR=${{ github.WORKSPACE }}/tmp" >> $GITHUB_ENV
+          echo "date=$(date)" >> $GITHUB_OUTPUTS
+          echo $GIT_PR_SHA
   
