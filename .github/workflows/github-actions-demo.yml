@@ -65,6 +65,7 @@ jobs:
     steps:
       - run: |
           echo "Step 1...."
+          echo $TEST
           sleep 5
       - run: |
           echo "Step 2..."
