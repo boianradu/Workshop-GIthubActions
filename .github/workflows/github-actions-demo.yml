@@ -64,7 +64,7 @@ jobs:
     if: github.event.inputs.environment == 'Production'
     steps:
       - run: |
-          echo "Step 1..."
+          echo "Step 1...."
           sleep 5
       - run: |
           echo "Step 2..."
